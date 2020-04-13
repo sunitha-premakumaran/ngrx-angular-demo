@@ -8,3 +8,15 @@ export class AddTodo implements Action {
         this.payload = payload;
     }
 }
+
+export class DeleteTodo implements Action {
+
+    readonly type = 'DELETE_TODO';
+    index: number;
+
+    constructor(index: number) {
+        this.index = index;
+    }
+}
+
+export type TodoType = AddTodo | DeleteTodo;

@@ -1,4 +1,4 @@
 <div *ngFor="let todo of (array | async)?.todos">
-  {{todo}}
+  <span>{{todo}}</span><button (click)="delete()">Delete</button>
 </div>
 <input type="text" [(ngModel)]="newValue" (keyup.enter)="pushValue()">

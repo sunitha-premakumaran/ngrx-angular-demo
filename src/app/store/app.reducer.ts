@@ -1,4 +1,4 @@
-import { AddTodo } from './app.actions';
+import { TodoType } from './app.actions';
 
 const initialState = {
     todos: [
@@ -7,7 +7,7 @@ const initialState = {
     ]
 };
 
-export function todoReducer(state = initialState, action: AddTodo) {
+export function todoReducer(state = initialState, action: TodoType) {
 
     switch (action.type) {
         case 'ADD_TODO': {
@@ -17,6 +17,16 @@ export function todoReducer(state = initialState, action: AddTodo) {
                     ...state.todos,
                     action.payload
                 ]
+            }
+        };
+        case 'DELETE_TODO': {
+            return {
+                ...state,
+                todos: state.todos.filter((el, index) => {
+                    if (index != action.index) {
+                        return el;
+                    }
+                })
             }
         }
         default: {

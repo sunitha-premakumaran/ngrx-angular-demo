@@ -22,7 +22,10 @@ export class AppComponent implements OnInit {
 
   //Dispach the action
   pushValue() {
-    console.log("Dispatch")
     this.store.dispatch(new AddTodo(this.newValue));
+  }
+
+  delete() {
+
   }
 }
