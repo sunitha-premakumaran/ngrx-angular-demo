@@ -2,6 +2,7 @@ import { TodoType } from './app.actions';
 
 export interface TodoState {
     todos: string[];
+    loading?: boolean;
 }
 const initialState: TodoState = {
     todos: [
@@ -13,7 +14,7 @@ const initialState: TodoState = {
 export function todoReducer(state = initialState, action: TodoType) {
 
     switch (action.type) {
-        case 'ADD_TODO': {
+        case 'ADDED_TODO': {
             return {
                 ...state,
                 todos: [
@@ -21,6 +22,12 @@ export function todoReducer(state = initialState, action: TodoType) {
                     action.payload
                 ]
             }
+        };
+        case 'POST_TODO': {
+            return {
+                ...state,
+                loading: true
+            };
         };
         case 'DELETE_TODO': {
             return {
@@ -32,6 +39,8 @@ export function todoReducer(state = initialState, action: TodoType) {
                 })
             }
         }
+
+        // On Init of store, this is fired and all the actions reaches all the reducers in
         default: {
             return state;
         }
