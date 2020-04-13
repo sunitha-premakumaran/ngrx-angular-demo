@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AddTodo } from './store/app.actions';
+import { AddTodo, DeleteTodo } from './store/app.actions';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -23,9 +23,10 @@ export class AppComponent implements OnInit {
   //Dispach the action
   pushValue() {
     this.store.dispatch(new AddTodo(this.newValue));
+    this.newValue = '';
   }
 
-  delete() {
-
+  delete(index: number) {
+    this.store.dispatch(new DeleteTodo(index));
   }
 }
