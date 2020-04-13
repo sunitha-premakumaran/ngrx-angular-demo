@@ -1,6 +1,9 @@
 import { TodoType } from './app.actions';
 
-const initialState = {
+export interface TodoState {
+    todos: string[];
+}
+const initialState: TodoState = {
     todos: [
         'apple',
         'mongo'

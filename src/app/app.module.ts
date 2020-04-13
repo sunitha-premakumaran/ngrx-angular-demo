@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { todoReducer } from './store/app.reducer';
+import { actionReducer } from './root.reducer';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { todoReducer } from './store/app.reducer';
   imports: [
     BrowserModule,
     FormsModule,
-    StoreModule.forRoot({ todoList: todoReducer })
+    StoreModule.forRoot(actionReducer)
   ],
   providers: [],
   bootstrap: [AppComponent]
