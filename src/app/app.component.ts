@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AddTodo, DeleteTodo, PostTodo } from './store/app.actions';
-import { Observable } from 'rxjs';
-import { TodoState } from './store/app.reducer';
+import { TodoState, DeleteTodo, PostTodo } from './store';
 
 @Component({
   selector: 'app-root',

@@ -5,9 +5,9 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AppEffects } from './store';
 import { AppComponent } from './app.component';
 import { actionReducer } from './root.reducer';
-import { AppEffects } from './store/app.effects';
 
 @NgModule({
   declarations: [

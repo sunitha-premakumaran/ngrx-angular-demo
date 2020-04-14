@@ -23,4 +23,4 @@ State management library for angular based on Redux and rxjs
     - return old state and new state
     - changes have to be immutable
 - Side Effects 
-    -   http request
+    -   http requests

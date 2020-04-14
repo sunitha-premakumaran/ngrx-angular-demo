@@ -14,7 +14,9 @@ export class AppEffects {
         switchMap((payload: string) => {
             return this.http.post(
                 'https://demo9257915.mockable.io/todos',
-                { payload: payload }
+                {
+                    payload: payload
+                }
             ).pipe(
                 map((data: string) => {
                     return new AddTodo(data);
